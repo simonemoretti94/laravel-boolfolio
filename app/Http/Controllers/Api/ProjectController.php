@@ -15,7 +15,7 @@ class ProjectController extends Controller
         {
             return response()->json([
                 'success' => true,
-                'results' => Project::with(['category' , 'user' , 'tags'])->orderByDesc('id')->where('title' , 'LIKE' , '%'. $request->search)->paginate(),
+                'results' => Project::with(['technologies'])->orderByDesc('id')->where('title' , 'LIKE' , '%'. $request->search)->paginate(),
             ]);
         }
         else{
