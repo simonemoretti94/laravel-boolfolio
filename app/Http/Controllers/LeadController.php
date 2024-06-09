@@ -32,6 +32,6 @@ class LeadController extends Controller
         Mail::to('noreply@boolfolio.com')->send(new NewLeadMarkdown($newLead));
 
         //redirect
-        return back()->with('Message' , 'Message sent successfully');
+        return back()->with('Message', 'Message sent successfully');
     }
 }
