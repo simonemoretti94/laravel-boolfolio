@@ -14,6 +14,7 @@
 </div>
 
 <div class="container">
+
     <form action="{{route('contacts.store')}}" id="contact-form" method="post">
         @csrf
 
