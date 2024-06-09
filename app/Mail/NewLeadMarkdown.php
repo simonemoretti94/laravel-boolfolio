@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class NewLeadMessage extends Mailable
+class NewLeadMarkdown extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,8 +27,7 @@ class NewLeadMessage extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            //from: new Address('admin@example.com' , 'Simone'), not necessary 'cause is set into .env file
-            subject: 'New Lead Message',
+            subject: "Hey Admin, you've got a new mail.",
         );
     }
 
@@ -38,7 +37,7 @@ class NewLeadMessage extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.new-lead-message',
+            markdown: 'mail.new-lead-markdown',
         );
     }
 
