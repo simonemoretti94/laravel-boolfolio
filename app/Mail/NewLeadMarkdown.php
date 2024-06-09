@@ -37,7 +37,7 @@ class NewLeadMarkdown extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.new-lead-markdown',
+            markdown: 'mail.new-lead-message',
         );
     }
 

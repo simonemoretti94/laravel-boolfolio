@@ -33,7 +33,8 @@ Route::middleware(['auth', 'verified'])
 
     });
 
-Route::get('/contacts' , [LeadController::class , 'create'])->name('contacts');
+Route::get('contacts' , [LeadController::class , 'create'])->name('contacts');
+Route::post('contacts' , [LeadController::class , 'store'])->name('contacts.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
